@@ -1,21 +1,19 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
 
-const InputTodo = props => {
-  const [title, setTitle] = useState("")
+const InputTodo = (props) => {
+  const [title, setTitle] = useState('');
 
-  const onChange = e => {
-    setTitle(e.target.value)
-  }
+  const onChange = (e) => {
+    setTitle(e.target.value);
+  };
 
-  const handleSubmit = e => {
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (title.trim()) {
-      props.addTodoProps(title)
-      setTitle("")
-    } else {
-      alert("Please write item")
+      props.addTodoProps(title); //eslint-disable-line 
+      setTitle('');
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
@@ -27,9 +25,9 @@ const InputTodo = props => {
         name="title"
         onChange={onChange}
       />
-      <button className="input-submit">Submit</button>
+      <button className="input-submit" type="button">Submit</button>
     </form>
-  )
-}
+  );
+};
 
-export default InputTodo
+export default InputTodo;
